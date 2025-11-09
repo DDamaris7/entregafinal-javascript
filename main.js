@@ -1,5 +1,5 @@
 // PRESENTACIÓN DEL SIMULACRO
- alert("¡Bienvenidos un simulacro de control de stock para tu local!");
+ alert("¡Bienvenidos un simulacro de un Inventario de stock para tu local!");
  alert("Responde las siguientes funciones para interactuar");
 
 // 1. Obtener datos del usuario (se recomienda usar un formulario, pero usamos prompt para el ejemplo)
