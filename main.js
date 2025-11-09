@@ -42,10 +42,6 @@ function listarProductos() {
   console.log("- Inventario actual -");
   inventario.forEach(producto => {
     console.log(`ID: ${producto.id}, Nombre: ${producto.nombre}, Cantidad: ${producto.cantidad}`);
-    console.log(`ID: ${producto.id}, Nombre: ${producto.nombre}, Cantidad: ${producto.cantidad}`);
-    console.log(`ID: ${producto.id}, Nombre: ${producto.nombre}, Cantidad: ${producto.cantidad}`);
-    console.log(`ID: ${producto.id}, Nombre: ${producto.nombre}, Cantidad: ${producto.cantidad}`);
-
   });
   
 }
@@ -59,19 +55,7 @@ agregarProducto(nombreProducto4, cantidadProducto4);
 // 3. Listar el inventario
 listarProductos();
 
-//Sumar producto nuevo comprado o elaborado
-// function Suma (cantidadProducto,unidadesIngresadas){
-//   return cantidadInicial + unidadesIngresadas
-// }
-// console.log ("Stock total", Suma) 
 
-//Productos vendidos o descartados
-
-// function Resta (SumaTotal,unidadesVendidas) {
-//   return SumaTotal-unidadesVendidas
-
-// }
-// console.log ("Stock total", Resta)
 
 
  
