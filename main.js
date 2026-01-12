@@ -1,23 +1,22 @@
-// PRESENTACIÓN DEL SIMULACRO
- alert("¡Bienvenidos un simulacro de un Inventario de stock para tu local!");
- alert("Responde las siguientes funciones para interactuar");
-
-// 1. Obtener datos del usuario (se recomienda usar un formulario, pero usamos prompt para el ejemplo)
-let nombreProducto1 = prompt("Ingrese el nombre del producto1:");
-let cantidadProducto1 = prompt(`Ingrese la cantidad de ${nombreProducto1}:`);
-
-let nombreProducto2 = prompt("Ingrese el nombre del producto2:");
-let cantidadProducto2 = prompt(`Ingrese la cantidad de ${nombreProducto2}:`);
-
-let nombreProducto3 = prompt("Ingrese el nombre del producto3:");
-let cantidadProducto3 = prompt(`Ingrese la cantidad de ${nombreProducto3}:`);
-
-let nombreProducto4 = prompt("Ingrese el nombre del producto4:");
-let cantidadProducto4 = prompt(`Ingrese la cantidad de ${nombreProducto4}:`);
+// PRESENTACIÓN DEL SIMULACRO A TRAVES DE HTML.
 
 
 // Array para almacenar los productos en inventario
 let inventario = [];
+
+// Cargar tareas desde localStorage
+let inventarioGuardado = localStorage.getItem('miListadeProductos');
+if (inventarioGuardado) {
+    inventario.push(...JSON.parse(inventarioGuardado));
+}
+
+// DOM
+let NuevoProducto = document.querySelector('#NuevoProducto');
+let CantidadInicial = document.querySelector('#CantidadInicial');
+let btnAgregarproducto = document.querySelector('#btnAgregarproducto');
+let listaDeProductos = document.querySelector('#listaDeProductos');
+let totaldeProductos = document.querySelector('#totaldeProductos');
+
 
 // Función para agregar un producto desde un formulario
 function agregarProducto(nombre, cantidad) {
@@ -45,12 +44,6 @@ function listarProductos() {
   });
   
 }
-
-// 2. Agregar el producto al inventario
-agregarProducto(nombreProducto1, cantidadProducto1);
-agregarProducto(nombreProducto2, cantidadProducto2);
-agregarProducto(nombreProducto3, cantidadProducto3);
-agregarProducto(nombreProducto4, cantidadProducto4);
 
 // 3. Listar el inventario
 listarProductos();

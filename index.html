@@ -7,8 +7,16 @@
     <title>Inventario de stock</title>
 </head>
 <body>
-    <h1>¡Bienvenidos Usuario a crear su Inventario de stock para tu local!</h1>
-    <h2>Responde las siguientes funciones para comenzar:</h2>
+    <h1>¡Bienvenidos Usuario! Crea su Inventario de stock para su local!</h1>
+    <h2>Sigue los pasos para comenzar el listado:</h2>
+    <input type="text" id="NuevoProducto" placeholder="Ingrese el nombre del producto:">
+    <input type="text" id="CantidadInicial" placeholder="Ingrese la cantidad de inicial">
+    <button id="btnAgregarproducto">Agregar a la lista</button>
+
+    <ul id="listaDeProductos"></ul>
+    <p>Total de productos: <span id="totaldeProductos">0</span></p>
+    
+
 
     <script src="main.js"></script>
 </body>
