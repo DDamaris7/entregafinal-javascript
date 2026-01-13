@@ -1,23 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
-    <title>Inventario de stock</title>
+  <meta charset="UTF-8">
+  <title>Inventario de stock</title>
+   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>¡Bienvenidos Usuario! Crea su Inventario de stock para su local!</h1>
-    <h2>Sigue los pasos para comenzar el listado:</h2>
-    <input type="text" id="NuevoProducto" placeholder="Ingrese el nombre del producto:">
-    <input type="text" id="CantidadInicial" placeholder="Ingrese la cantidad de inicial">
-    <button id="btnAgregarproducto">Agregar a la lista</button>
 
-    <ul id="listaDeProductos"></ul>
-    <p>Total de productos: <span id="totaldeProductos">0</span></p>
-    
+  <h1>¡Bienvenido Usuario! </h1>
+  <h2>Para crear su primer inventario de stock, para su local, complete los siguientes items</h2>
 
+  <input type="text" id="nombre" placeholder="Producto">
+  <input type="number" id="cantidad" placeholder="Cantidad">
+  <button onclick="agregarProducto()">Agregar</button>
 
-    <script src="main.js"></script>
+  <p id="mensaje" style="color:red;"></p>
+
+  <h2 id="titulo-editar" style="display:none;">✏️ Editar producto</h2>
+  <input type="text" id="edit-nombre" placeholder="Nuevo nombre" style="display:none;">
+  <input type="number" id="edit-cantidad" placeholder="Nueva cantidad" style="display:none;">
+  <button id="btn-guardar" style="display:none;">Guardar cambios</button>
+  
+  <h2>Productos</h2>
+  <ul id="lista"></ul>
+  <h3 id="total"></h3>
+
+  <script src="main.js"></script>
 </body>
 </html>
