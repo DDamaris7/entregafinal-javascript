@@ -10,9 +10,11 @@
   <h1>¡Bienvenido Usuario! </h1>
   <h2>Para crear su primer inventario de stock, para su local, complete los siguientes items</h2>
 
+  <input type="number" id="codigo" placeholder="Código">
   <input type="text" id="nombre" placeholder="Producto">
   <input type="number" id="cantidad" placeholder="Cantidad">
   <button onclick="agregarProducto()">Agregar</button>
+  
 
   <p id="mensaje" style="color:red;"></p>
 
@@ -21,10 +23,14 @@
   <input type="number" id="edit-cantidad" placeholder="Nueva cantidad" style="display:none;">
   <button id="btn-guardar" style="display:none;">Guardar cambios</button>
   
+
   <h2>Productos</h2>
   <ul id="lista"></ul>
   <h3 id="total"></h3>
 
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
   <script src="javascript/main.js"></script>
+  
 </body>
 </html>
