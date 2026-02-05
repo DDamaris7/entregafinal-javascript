@@ -1,1 +1,29 @@
 
+{
+ "productos": [
+ {
+ "id": 1,
+ "codigo": 1,
+ "nombre": "Arroz",
+ "Cantidad": 20,
+ },
+
+ {
+    "id": 2,
+    "codigo": 2,
+    "nombre": "Fideos nido",
+    "Cantidad": 10,
+
+ },
+
+ {
+    "id":3,
+    "codigo": 3,
+    "nombre": "Fideos largos",
+    "Cantidad": 14,
+ }
+
+
+    ]
+  
+}
