@@ -28,7 +28,7 @@ const inventarioStorage = JSON.parse(localStorage.getItem("inventario"));
   fetch("data.json")
     .then(res => res.json())
     .then(data => {
-      inventario = data;
+      inventario = data.producto;
       guardarStorage();
       mostrarInventario();
     });
@@ -81,10 +81,16 @@ function mostrarInventario() {
   inventario.forEach(producto => {
     const li = document.createElement("li");
     li.innerHTML = `
-      ${producto.codigo}-${producto.nombre} - ${producto.cantidad} unidades
-      <button onclick="editarProducto(${producto.id})">✏️</button>
-      <button onclick="eliminarProducto(${producto.id})">❌</button>
-    `;
+  ${producto.codigo} - ${producto.nombre} 
+  | Stock: <strong>${producto.cantidad}</strong>
+
+  <div>
+    <button onclick="venderProducto(${producto.id})">🛒 Vender</button>
+    <button onclick="reponerProducto(${producto.id})">📦 Reponer</button>
+    <button onclick="editarProducto(${producto.id})">✏️</button>
+    <button onclick="eliminarProducto(${producto.id})">❌</button>
+  </div>
+`;
     lista.appendChild(li);
   });
   
@@ -151,6 +157,32 @@ btnGuardar.addEventListener("click", () => {
   tituloEditar.style.display = "none";
 });
 
+// suma para reponer producto y resta para sacar productos vendidos.
+
+function venderProducto(id) {
+  const producto = inventario.find(p => p.id === id);
+
+  if (producto.cantidad <= 0) {
+    Swal.fire("No hay stock disponible");
+    return;
+  }
+
+  producto.cantidad -= 1;
+  guardarStorage();
+  mostrarInventario();
+
+  Swal.fire("Venta registrada");
+}
+
+function reponerProducto(id) {
+  const producto = inventario.find(p => p.id === id);
+
+  producto.cantidad += 1;
+  guardarStorage();
+  mostrarInventario();
+
+  Swal.fire("Stock repuesto");
+}
 
 
 
