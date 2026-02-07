@@ -41,7 +41,8 @@ function agregarProducto() {
   const cantidad = Number(document.getElementById("cantidad").value);
   const codigo = Number(document.getElementById("codigo").value); 
 
-  if (nombre === "" || cantidad <= 0) {
+ //Validación de los datos
+  if (nombre === "" || cantidad <= 0 || codigo <= 0) {
     mensaje.textContent = "Datos inválidos";
    return;
  }
@@ -74,9 +75,11 @@ function limpiarInputs() {
   document.querySelectorAll("input").forEach(input => input.value = "");
 }
 
-// MOSTRAR LISTA
+// MOSTRAR LISTA. 
 function mostrarInventario() {
   lista.innerHTML = "";
+
+//SE VA A MOSTRAR UN BOTON DE REPONER QUE VA A SUMAR STOCK Y UN BOTON DE VENDER EN LA CUAL VA A RESTAR STOCK
 
   inventario.forEach(producto => {
     const li = document.createElement("li");
@@ -95,7 +98,6 @@ function mostrarInventario() {
   });
   
   total.textContent = `Total de productos: ${inventario.length}`;
-
 }
 
 // ELIMINAR PRODUCTO
